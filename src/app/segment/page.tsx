@@ -2,24 +2,12 @@ import Link from 'next/link';
 
 const Segment = () => {
 	return (
-		<div className="flex gap-5">
+		<div className="flex flex-col">
 			<Link
 				href={'/segment/home'}
-				className="flex w-20 h-20 bg-red-200 rounded-md items-center justify-center"
+				className="flex items-center justify-center bg-red-200 h-9"
 			>
-				Home
-			</Link>
-			<Link
-				href={'/segment/store'}
-				className="flex w-20 h-20 bg-red-300 rounded-md items-center justify-center"
-			>
-				Store
-			</Link>
-			<Link
-				href={'/segment/about'}
-				className="flex w-20 h-20 bg-red-400 rounded-md items-center justify-center"
-			>
-				About
+				Go To Home
 			</Link>
 		</div>
 	);
