@@ -6,8 +6,8 @@ import React, { ReactNode } from 'react';
 interface Props {
 	children: ReactNode;
 }
-function Providers({ children }: Props) {
+function Provider({ children }: Props) {
 	return <SessionProvider>{children}</SessionProvider>;
 }
 
-export default Providers;
+export default Provider;
