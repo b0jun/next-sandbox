@@ -16,6 +16,11 @@ const linkList = [
 		href: '/segment',
 		bg: 'bg-amber-100',
 	},
+	{
+		title: 'Bottom Sheet',
+		href: '/bottom-sheet',
+		bg: 'bg-amber-200',
+	},
 ];
 
 export default function Home() {
