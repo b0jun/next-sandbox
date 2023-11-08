@@ -6,7 +6,7 @@ import { useRouter } from 'next/navigation';
 
 const BottomSheetPage = () => {
 	const { back } = useRouter();
-	const overlay = useOverlay({ exitOnUnmount: false });
+	const overlay = useOverlay();
 
 	const openBottomSheet = () => {
 		overlay.open(({ isOpen, close, exit }) => (
