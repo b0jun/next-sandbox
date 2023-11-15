@@ -1,3 +1,5 @@
+import { useLockBodyScroll } from '@/hooks/useLockBodyScroll';
+import Image from 'next/image';
 import React from 'react';
 
 type Props = {
@@ -6,6 +8,7 @@ type Props = {
 	children: React.ReactNode;
 };
 const BottomSheet = ({ open, onClose, children }: Props) => {
+	useLockBodyScroll();
 	return (
 		<>
 			<div
@@ -14,33 +17,24 @@ const BottomSheet = ({ open, onClose, children }: Props) => {
 				}`}
 			/>
 			<div className="fixed z-10 w-screen h-full">
-				<div className="flex min-h-full items-end justify-center">
+				<div className="flex items-end justify-center min-h-full">
 					<div
-						className={`p-4 w-full max-w-3xl relative rounded-t-3xl bg-white shadow-xl h-[320px] duration-200 ${
-							open ? 'translate-y-0' : 'translate-y-[320px]'
+						className={`pt-4 px-4 w-full min-h-[300px] max-w-3xl relative rounded-t-3xl bg-white shadow-xl duration-200 ${
+							open ? 'translate-y-0' : 'translate-y-full'
 						}`}
 					>
-						<div className="text-right">
+						<div className="mb-3 text-right">
 							<button
 								type="button"
 								onClick={onClose}
-								className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"
+								className="inline-flex items-center justify-center p-2 text-gray-400 bg-white rounded-md hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"
 							>
-								<svg
-									className="h-6 w-6"
-									xmlns="http://www.w3.org/2000/svg"
-									fill="none"
-									viewBox="0 0 24 24"
-									stroke="currentColor"
-									aria-hidden="true"
-								>
-									<path
-										stroke-linecap="round"
-										stroke-linejoin="round"
-										stroke-width="2"
-										d="M6 18L18 6M6 6l12 12"
-									/>
-								</svg>
+								<Image
+									src="/icons/ic_close.svg"
+									alt="close"
+									width={24}
+									height={24}
+								/>
 							</button>
 						</div>
 						<div>{children}</div>

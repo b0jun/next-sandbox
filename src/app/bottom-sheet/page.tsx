@@ -19,7 +19,10 @@ const BottomSheetPage = () => {
 					}, 200);
 				}}
 			>
-				<div>컨텐츠</div>
+				<>
+					<div className="h-[200px] bg-red-200">컨텐츠1</div>
+					<div className="h-[200px] bg-red-300">컨텐츠2</div>
+				</>
 			</BottomSheet>
 		));
 	};
