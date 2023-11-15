@@ -1,6 +1,6 @@
 'use client';
 
-import BottomSheet from '@/components/bottom-sheet/BottomSheet';
+import BottomSheetWithout from '@/components/bottom-sheet/BottomSheetWithout';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 
@@ -32,9 +32,9 @@ const Without = () => {
 				</button>
 			</div>
 			{isOpen && (
-				<BottomSheet open={isAnimating} onClose={close}>
+				<BottomSheetWithout open={isAnimating} onClose={close}>
 					<div>컨텐츠</div>
-				</BottomSheet>
+				</BottomSheetWithout>
 			)}
 		</>
 	);
