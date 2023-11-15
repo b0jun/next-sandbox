@@ -8,12 +8,16 @@ type Props = {
 const BottomSheet = ({ open, onClose, children }: Props) => {
 	return (
 		<>
-			<div className="fixed top-0 left-0 right-0 bottom-0 bg-gray-300 bg-opacity-75 transition-opacity duration-200" />
+			<div
+				className={`fixed inset-0 bg-gray-300 duration-200 ${
+					open ? 'opacity-40' : 'opacity-0'
+				}`}
+			/>
 			<div className="fixed z-10 w-screen h-full">
 				<div className="flex min-h-full items-end justify-center">
 					<div
-						className={`p-4 w-full max-w-3xl relative rounded-t-3xl bg-white shadow-xl h-80 ${
-							open ? 'animate-sheetUp' : 'animate-sheetDown'
+						className={`p-4 w-full max-w-3xl relative rounded-t-3xl bg-white shadow-xl h-[320px] duration-200 ${
+							open ? 'translate-y-0' : 'translate-y-[320px]'
 						}`}
 					>
 						<div className="text-right">
